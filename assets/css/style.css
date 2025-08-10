@@ -369,3 +369,118 @@ section {
         padding: 20px;
     }
 }
+
+/* Adicione este bloco de código NO FINAL do seu arquivo style.css */
+
+/* ----------------------------- */
+/* PÁGINA DE ATIVIDADE INDIVIDUAL */
+/* ----------------------------- */
+
+.atividade-conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px;
+}
+
+.atividade-conteudo h1 {
+    font-size: 2.8rem;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.atividade-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.atividade-tags span {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.tag-eixo {
+    background-color: var(--cor-fundo-verde);
+    color: var(--cor-texto-escuro);
+}
+
+.tag-serie {
+    background-color: var(--cor-fundo-rosa);
+    color: var(--cor-texto-escuro);
+}
+
+.texto-atividade h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.texto-atividade ul {
+    margin-left: 20px;
+}
+
+.texto-atividade li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.atividade-imagem {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.atividade-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.atividade-imagem figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.atividade-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: var(--cor-fundo-rosa);
+    color: var(--cor-texto-escuro);
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-download:hover {
+    background-color: var(--cor-branco);
+    border-color: var(--cor-fundo-rosa);
+    transform: translateY(-3px);
+}
+
+/* Estilos para o link DENTRO do item da atividade */
+.atividade-item a {
+    color: inherit; /* Herda a cor do texto do container pai */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: 600;
+}
+
+.atividade-item a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
