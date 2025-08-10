@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computação na Escola - Séries</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="tutoriais.html">Tutoriais</a>
+            <a href="eixos.html">Eixos</a>
+            <a href="series.html" class="active-nav">Séries</a>
+            <a href="o-projeto.html">O Projeto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pagina-atividades">
+            <h1>Atividades separadas por séries</h1>
+
+            <div class="seletor-categoria">
+                <button class="btn-categoria" data-categoria="fundamental-1">Fundamental 1</button>
+                <button class="btn-categoria" data-categoria="fundamental-2">Fundamental 2</button>
+                <button class="btn-categoria" data-categoria="ensino-medio">Ensino Médio</button>
+            </div>
+
+            <hr class="divisor-atividades">
+
+            <h2 class="titulo-categoria" id="titulo-categoria">Fundamental 1</h2>
+
+            <div class="atividades-container">
+
+                <div class="atividade-lista" id="fundamental-1-atividades">
+                    <a href="#" class="atividade-item"><span>Atividade de Fund 1 - A</span> <span class="tag">Pensamento Comp.</span></a>
+                    <a href="#" class="atividade-item"><span>Atividade de Fund 1 - B</span> <span class="tag">Mundo Digital</span></a>
+                </div>
+
+                <div class="atividade-lista" id="fundamental-2-atividades" style="display: none;">
+                    <a href="#" class="atividade-item"><span>Atividade de Fund 2 - A</span> <span class="tag">Cultura Digital</span></a>
+                </div>
+
+                <div class="atividade-lista" id="ensino-medio-atividades" style="display: none;">
+                    <a href="#" class="atividade-item"><span>Atividade de Ens Médio - A</span> <span class="tag">Pensamento Comp.</span></a>
+                    <a href="#" class="atividade-item"><span>Atividade de Ens Médio - B</span> <span class="tag">Mundo Digital</span></a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-bottom">
+        <div class="contato">
+            <h3>Contato</h3>
+            <p>email@exemplo.com<br>(11) 99999-9999</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
