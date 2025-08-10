@@ -520,3 +520,37 @@ section {
     margin-bottom: 8px;
     font-weight: 700;
 }
+
+/* ----------------------------- */
+/* PÁGINA DE TUTORIAIS           */
+/* ----------------------------- */
+
+.pagina-tutoriais {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 80px 20px;
+}
+
+.pagina-tutoriais h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.lista-videos-tutoriais {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; 
+    margin-top: 50px;
+}
+
+.video-item-tutorial {
+    width: 100%;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
