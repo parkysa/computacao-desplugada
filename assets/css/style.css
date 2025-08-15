@@ -41,18 +41,33 @@ section {
 /* HEADER E NAVEGAÇÃO  */
 /* ------------------- */
 .main-header {
-    background-color: var(--cor-fundo-rosa); /* <-- COR ALTERADA */
-    padding: 20px;
-    /* A borda foi removida, mas você pode mantê-la se preferir */
-    /* border-bottom: 1px solid #ddd; */
+    background-color: var(--cor-fundo-rosa);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-height: 80px;
 }
 
 .main-nav {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 30px;
+    flex: 1;
 }
+
+.logo-esquerda {
+    height: 50px;
+    width: auto;
+}
+.logo-direita {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
 
 .main-nav a {
     text-decoration: none;
@@ -336,16 +351,12 @@ section {
     padding: 20px calc((100vw - 900px) / 2);
 }
 
-.atividade-lista .atividade-item:nth-child(3n + 1) {
+.atividade-lista .atividade-item:nth-child(odd) {
     background-color: var(--cor-fundo-verde);
 }
 
-.atividade-lista .atividade-item:nth-child(3n + 2) {
+.atividade-lista .atividade-item:nth-child(even) {
     background-color: var(--cor-fundo-rosa);
-}
-
-.atividade-lista .atividade-item:nth-child(3n) {
-    background-color: var(--cor-branco);
 }
 
 .atividade-lista .atividade-item:hover {
