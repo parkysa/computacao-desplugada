@@ -17,10 +17,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden; /* Previne a barra de rolagem horizontal */
+}
+
 body {
     font-family: var(--fonte-principal);
     background-color: var(--cor-fundo-claro);
     color: var(--cor-texto-escuro);
+    word-wrap: break-word; /* Garante a quebra de palavras longas */
 }
 
 h1, h2 {
@@ -47,7 +52,8 @@ section {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    max-height: 80px;
+    height: 80px;
+    position: relative;
 }
 
 .main-nav {
@@ -61,11 +67,20 @@ section {
 .logo-esquerda {
     height: 50px;
     width: auto;
+    flex-shrink: 1;
+    min-width: 0;
 }
 .logo-direita {
     height: 100px;
     width: auto;
     object-fit: contain;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.logo-esquerda img, .logo-direita img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -87,7 +102,7 @@ section {
 /* SEÇÃO HERO          */
 /* ------------------- */
 .hero {
-    min-height: 450px; /* <-- VALOR AUMENTADO PARA DEIXAR MAIS ALTO */
+    min-height: 450px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -98,8 +113,8 @@ section {
 }
 
 .hero-content {
-
     max-width: 600px;
+    padding: 0 20px;
 }
 
 .hero h1 {
@@ -136,7 +151,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .card {
@@ -158,7 +173,7 @@ section {
 .card img {
     width: 100%;
     height: 250px;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
@@ -182,7 +197,7 @@ section {
     width: 100%;
     max-width: 640px;
     margin: 0 auto 30px;
-    padding-bottom: 48.6456%; 
+    padding-bottom: 56.25%; /* Proporção 16:9 */
     height: 0;
 }
 
@@ -223,11 +238,11 @@ section {
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .creditos-texto {
-    flex: 2; 
+    flex: 2;
     max-width: 650px;
 }
 .creditos-texto h2{
@@ -235,7 +250,7 @@ section {
 }
 
 .creditos-logo {
-    flex: 1; 
+    flex: 1;
     max-width: 300px;
     background-color: var(--cor-logo-uga-bg);
     border-radius: 10px;
@@ -262,14 +277,11 @@ section {
 /* --------------------------------- */
 /* PÁGINA DE ATIVIDADES (Eixos/Séries) */
 /* --------------------------------- */
-
-/* Estilo para o link de navegação ativo */
 .main-nav a.active-nav {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
-/* Container principal da página de Eixos ou Séries */
 .pagina-atividades {
     padding-top: 40px;
     padding-bottom: 120px;
@@ -289,6 +301,7 @@ section {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .btn-categoria {
@@ -348,7 +361,7 @@ section {
     color: var(--cor-texto-escuro);
     font-size: 1.1rem;
     transition: background-color 0.2s;
-    padding: 20px calc((100vw - 900px) / 2);
+    padding: 20px;
 }
 
 .atividade-lista .atividade-item:nth-child(odd) {
@@ -370,12 +383,7 @@ section {
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-@media (max-width: 940px) {
-    .atividade-lista .atividade-item {
-        padding: 20px;
-    }
+    flex-shrink: 0;
 }
 
 /* ----------------------------- */
@@ -425,8 +433,9 @@ section {
     margin-bottom: 15px;
 }
 
-.texto-atividade ul {
+.texto-atividade ul, .texto-atividade ol {
     margin-left: 20px;
+    padding-left: 10px;
 }
 
 .texto-atividade li {
@@ -480,28 +489,27 @@ section {
     transform: translateY(-3px);
 }
 
-/* Estilos para o link DENTRO do item da atividade */
 .atividade-item a {
-    color: inherit; /* Herda a cor do texto do container pai */
-    text-decoration: none; /* Remove o sublinhado padrão */
+    color: inherit;
+    text-decoration: none;
     font-weight: 600;
+    margin-right: 15px;
 }
 
 .atividade-item a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    text-decoration: underline;
 }
 
 /* ----------------------------- */
 /* PÁGINA "SOBRE O PROJETO"      */
 /* ----------------------------- */
-
 .pagina-texto-simples {
     max-width: 800px;
     margin: 0 auto;
     padding: 60px 20px 80px 20px;
 }
 
-.pagina-texto-simples h1 {
+.pagina-texto-simples h1, .pagina-tutoriais h1 {
     font-size: 2.8rem;
     margin-bottom: 30px;
 }
@@ -535,22 +543,16 @@ section {
 /* ----------------------------- */
 /* PÁGINA DE TUTORIAIS           */
 /* ----------------------------- */
-
 .pagina-tutoriais {
     max-width: 900px;
     margin: 0 auto;
     padding: 60px 20px 80px 20px;
 }
 
-.pagina-tutoriais h1 {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-}
-
 .lista-videos-tutoriais {
     display: flex;
     flex-direction: column;
-    gap: 60px; 
+    gap: 60px;
     margin-top: 50px;
 }
 
@@ -564,4 +566,133 @@ section {
     font-size: 1.1rem;
     font-weight: 500;
     color: #333;
+}
+
+/* ------------------- */
+/* RESPONSIVIDADE      */
+/* ------------------- */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-hamburguer .linha {
+    width: 30px;
+    height: 3px;
+    background-color: var(--cor-texto-escuro);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+@media (max-width: 940px) {
+    .main-nav {
+        gap: 15px;
+    }
+    .main-nav a {
+        font-size: 1rem;
+    }
+    .creditos-texto h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-rosa);
+        padding: 20px 0;
+        border-top: 1px solid #ffffff50;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .creditos-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .creditos-texto {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .atividade-lista .atividade-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .atividade-conteudo h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Adicionado para telas muito pequenas */
+@media (max-width: 320px) {
+    section {
+        padding: 40px 10px;
+    }
+
+    .main-header {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .logo-esquerda {
+        height: 40px;
+    }
+
+    .hero h1, .pagina-texto-simples h1, .pagina-tutoriais h1, .pagina-atividades h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-content, .titulo-categoria, .seletor-categoria {
+        padding: 0 10px;
+    }
+    
+    .atividade-conteudo h1 {
+        font-size: 1.9rem;
+    }
 }
