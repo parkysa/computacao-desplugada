@@ -192,23 +192,35 @@ section {
     text-align: center;
 }
 
+/* --- CÓDIGO CORRIGIDO PARA OS VÍDEOS --- */
+/* Novo invólucro para a borda */
+.video-wrapper {
+    max-width: 640px;
+    margin: 0 auto 30px;
+    padding: 5px;
+    background-color: var(--cor-branco);
+    border-radius: 15px; /* Um pouco maior que o do vídeo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Container para manter a proporção */
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 640px;
-    margin: 0 auto 30px;
     padding-bottom: 56.25%; /* Proporção 16:9 */
     height: 0;
+    border-radius: 10px; /* Borda interna do vídeo */
+    overflow: hidden;
 }
 
+/* Iframe que preenche o container */
 .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 5px solid var(--cor-branco);
-    border-radius: 10px;
+    border: 0; /* SEM borda no iframe */
 }
 
 .cta-button {
